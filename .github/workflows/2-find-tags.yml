@@ -15,4 +15,5 @@ jobs:
         include: "index.html" #"albums.html" #, concerts.html, contact.html, home.html"
 
     - name: Tag main exists
-      run: echo ${{ steps.find-main.outputs.fileFoundCount }}
+      if: ${{ steps.find-main.outputs.fileFoundCount == 0 }}
+      run: exit 1
