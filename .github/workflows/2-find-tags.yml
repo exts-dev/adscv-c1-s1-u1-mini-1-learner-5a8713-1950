@@ -13,6 +13,6 @@ jobs:
       with:
         find: "<main>" # header, main, footer, h1, h2, h3
         include: "index.html" #"albums.html" #, concerts.html, contact.html, home.html"
+
     - name: Tag main exists
-      if: ${{ steps.find-main.outputs.fileFoundCount }} == 0
-      run: exit 1
+      run: echo ${{ steps.find-main.outputs.fileFoundCount }}
